@@ -17,4 +17,14 @@ class StringUtilsAppTest {
     void normalizeSpacesRedueixEspaisMultiples(String input, String expected) {
         assertEquals(expected, utils.normalizeSpaces(input));
     }
+
+    @ParameterizedTest
+    @CsvSource({
+            "'a    b    c', 'a b c'",
+            "'   test    amb   espais   ', 'test amb espais'",
+            "'java     junit', 'java junit'"
+    })
+    void normalizeSpacesCasosExtra(String input, String expected) {
+        assertEquals(expected, utils.normalizeSpaces(input));
+    }
 }
