@@ -10,9 +10,11 @@ class TemperatureConverterTest {
 
     @ParameterizedTest
     @CsvSource({
-        // TODO
+            "0, 32",
+            "100, 212",
+            "-40, -40"
     })
-    void TODO_convertCelsiusToFahrenheitRetornaValorCorrecte(double c, double expected) {
-        // TODO
+    void convertCelsiusToFahrenheitRetornaValorCorrecte(double c, double expected) {
+        assertEquals(expected, converter.celsiusToFahrenheit(c));
     }
 }

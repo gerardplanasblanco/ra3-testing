@@ -10,9 +10,11 @@ class StringUtilsAppTest {
 
     @ParameterizedTest
     @CsvSource({
-        // TODO
+            "'hola   mon', 'hola mon'",
+            "'   hola    mon   ', 'hola mon'",
+            "'hola', 'hola'"
     })
-    void TODO_normalizeSpacesRedueixEspaisMultiples(String input, String expected) {
-        // TODO
+    void normalizeSpacesRedueixEspaisMultiples(String input, String expected) {
+        assertEquals(expected, utils.normalizeSpaces(input));
     }
 }
